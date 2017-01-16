@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>菜鸟教程 React 实例</title>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react.js"></script>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react-dom.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+  </head>
+ <body>
+    <div id="message" align="center"></div>
+    <script type="text/babel">
+      var Counter = React.createClass({
+        getInitialState: function () {
+          return { clickCount: 0 };
+        },
+        handleClick: function () {
+          this.replaceState(function(state) {
+            return {clickCount: 4};
+          });
+        },
+        render: function () {
+          return (<h2 onClick={this.handleClick}>点我！点击次数为: {this.state.clickCount}</h2>);
+        }
+      });
+      ReactDOM.render(
+        <Counter />,
+        document.getElementById('message')
+      );
+    </script>
+  </body>
+</html>

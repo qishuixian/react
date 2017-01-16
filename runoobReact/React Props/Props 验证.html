@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>菜鸟教程 React 实例</title>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+     var title="菜鸟教程";
+     var MyTitle=React.createClass({
+        propTypes:{
+          title:React.PropTypes.string.isRequired,
+        },
+        render:function(){
+          return <h1>{this.props.title}</h1>;
+        }
+     });
+    ReactDOM.render(
+      <MyTitle title={title} />,
+      document.getElementById('example')
+    );
+    </script>
+  </body>
+</html>

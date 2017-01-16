@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>菜鸟教程 React 实例</title>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var LikeButton=React.createClass({
+        getInitialState:function(){
+          return {liked:false};
+        },
+        handleCick:function(event){
+          this.setState({liked:!this.state.liked});
+        },
+        render:function(){
+          var text=this.state.liked?'喜爱':'不喜爱';
+          return (
+            <p onClick={this.handleCick}>
+            你<b>{text}</b>我。点我切好状态。
+            </p>
+          );
+        }
+      })
+      React.render(
+        <LikeButton />,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>菜鸟教程 React 实例</title>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var HelloMessage=React.createClass({
+        getDefaultProps:function(){
+          return {
+            name:'Runoob'
+          };
+        },
+        render:function(){
+          return <h1>hello{this.props.name}</h1>;
+        }
+      });
+      ReactDOM.render(
+        <HelloMessage  />,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>
